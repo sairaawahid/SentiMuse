@@ -1,19 +1,18 @@
 import streamlit as st
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-import time
 import openai
+import time
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
 from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.styles import ParagraphStyle
 from io import BytesIO
 
-# ---- Set OpenAI key for Streamlit Cloud ----
+# --- Set OpenAI API key from Streamlit secrets ---
 openai.api_key = st.secrets["OPENAI_API_KEY"]
-
 OPENAI_MODEL = "gpt-3.5-turbo"  # or "gpt-4o"
 
-# ---- Moods and their display settings ----
+# ---- Mood + Color Definitions ----
 EMOJI_MOODS = {
     "Select---": "",
     # Positive
@@ -78,11 +77,11 @@ MOOD_DISPLAY = {
     "Excited": {"emoji": "🤩", "color": "#FFB347"},
     "Calm": {"emoji": "😌", "color": "#A7E9AF"},
     "Optimistic": {"emoji": "😃", "color": "#A1C6EA"},
-    "Confident": {"emoji": "😎",   "color": "#C2F5FF"},
+    "Confident": {"emoji": "😎", "color": "#C2F5FF"},
     "Peaceful": {"emoji": "😇", "color": "#C3F8FF"},
     "Content": {"emoji": "😋", "color": "#FFE066"},
-    "Proud": {"emoji": "🫡",   "color": "#D6FFD7"},
-    "Inspired": {"emoji": "😇",   "color": "#B1E1FF"},
+    "Proud": {"emoji": "🫡", "color": "#D6FFD7"},
+    "Inspired": {"emoji": "😇", "color": "#B1E1FF"},
     "Hopeful": {"emoji": "🕊️", "color": "#B7E5D1"},
     "Affectionate": {"emoji": "🥰", "color": "#FFCFDF"},
     "Appreciative": {"emoji": "🫶", "color": "#FFE5B4"},
@@ -108,7 +107,7 @@ MOOD_DISPLAY = {
     "Fearful": {"emoji": "😨", "color": "#FFA07A"},
     "Overwhelmed": {"emoji": "😩", "color": "#F67280"},
     "Guilty": {"emoji": "😔", "color": "#FFD6E0"},
-    "Burnt Out": {"emoji": "🫠",   "color": "#EAD7B7"},
+    "Burnt Out": {"emoji": "🫠", "color": "#EAD7B7"},
     "Disappointed": {"emoji": "😒", "color": "#BDBDBD"},
     "Frustrated": {"emoji": "😠", "color": "#FFC3A0"},
     "Vulnerable": {"emoji": "🥺", "color": "#D6E0F0"},
@@ -138,7 +137,7 @@ def detect_sentiment(text):
     else:
         return "neutral"
 
-# ---- Prompt Generation using OpenAI ----
+# ---- OpenAI Prompt Generator ----
 def generate_prompt_openai(emotion, topic, journal=None):
     base_prompt = f"""
 You are SentiMuse: a creative prompt designer for emotionally intelligent AI tools.
@@ -184,7 +183,7 @@ Return a single, original, emotionally-rich writing prompt (1–2 sentences):
     except Exception as e:
         return f"❌ Error: {str(e)}"
 
-# ---- Save Manager ----
+# ---- Save/Load Prompts ----
 if "favorites" not in st.session_state:
     st.session_state.favorites = []
 
@@ -199,7 +198,7 @@ def save_prompt(prompt_text, emotion=None):
 def load_saved_prompts():
     return st.session_state.favorites
 
-# ---- Session State Initialization ----
+# ---- Streamlit State Initialization ----
 if "generated_prompt" not in st.session_state:
     st.session_state.generated_prompt = ""
 if "tears_rating" not in st.session_state:
