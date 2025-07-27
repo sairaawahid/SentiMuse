@@ -403,12 +403,12 @@ st.markdown(
         bottom: 0;
         width: 100vw;
         background: transparent;
-        color: #888;
+        color: #6c757d;
         text-align: center;
-        font-size: 0.98rem;
+        font-size: 12px;
         padding: 16px 0 8px 0;
         z-index: 9999;
-        font-family: 'Segoe UI', Arial, sans-serif;
+        font-family: Source Sans Pro;
         letter-spacing: 0.01em;
     }
     </style>
