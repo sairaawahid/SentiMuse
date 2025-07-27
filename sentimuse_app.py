@@ -151,6 +151,9 @@ Rules:
 - Do NOT ask a question. Do NOT give advice. Do NOT use metaphors or poetic language.
 - If journal notes are present, use the user’s words or themes naturally.
 - Make sure the prompt is actionable, relatable, and safe for anyone.
+- Keep the prompt under 20 words if possible.
+- Use everyday words that anyone could understand.
+- No need for details unless the journal includes them.
 
 Examples:
 
@@ -158,10 +161,15 @@ Good:
 - "Write a short story about a time you overcame fear and felt proud."
 - "Describe a place that feels like home when you’re feeling anxious."
 - "Imagine your future self sending you a message of encouragement after a hard day."
+- "Write about a time you felt nervous before speaking but went for it."
+- "Describe how you handled anxiety before an important event."
+- "Share a moment you surprised yourself by being brave."
 
 Bad:
 - "How do you feel when you’re anxious?"
 - "Fear is a gentle visitor in your life."
+- "Describe your feelings in detail."
+- "Imagine anxiety as a gentle visitor…"
 - "Describe your feelings in detail."
 
 Input:
