@@ -113,4 +113,4 @@ If you liked this project or want to collaborate on emotion-first AI tools, reac
 
 **Samiya-AW →** [LinkedIn](https://www.linkedin.com/in/samiyaaw/) or [GitHub](https://github.com/Samiya-AW)
 
-*Made with ❤️ at the CS Girlies Hackathon 2025*
+*Made with ❤️ at the CS Girlies Hackathon 2025!*
