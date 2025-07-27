@@ -1,7 +1,7 @@
 # SentiMuse: Prompt Co-Creation with Soul
 SentiMuse is a human-first, emotionally intelligent writing companion that helps you generate creative, emotionally aware prompts for AI tools like ChatGPT, Claude, or Gemini.
 
-It doesn't just generate prompts — it co-creates them with you based on your mood, topic, and journaling reflections. Think of it as a therapeutic journaling buddy that speaks your emotional language.
+It doesn't just generate prompts, it co-creates them with you based on your mood, topic, and journaling reflections. Think of it as a therapeutic journaling buddy that speaks your emotional language.
 
 ---
 
