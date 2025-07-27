@@ -13,6 +13,8 @@ It doesn't just generate prompts, it co-creates them with you based on your mood
 
 [Click to try SentiMuse on Streamlit](https://sentimuse-xupiwxghlmzks7ibtmropa.streamlit.app/)
 
+[Demo video link:] (https://youtu.be/SYTkAEWM6Xw)
+
 ---
 
 ## Description
