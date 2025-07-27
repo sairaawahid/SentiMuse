@@ -3,7 +3,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 [![Streamlit App](https://img.shields.io/badge/Live%20App-Streamlit-ff4b4b?logo=streamlit)](https://sairaaw-sentimuse.streamlit.app)
 
-SentiMuse is a human-first, emotionally intelligent writing companion that helps you generate emotionally aware prompts for AI tools like ChatGPT, Claude, or Gemini.
+SentiMuse is a **human-first, emotionally intelligent** writing companion that helps you **generate emotionally aware prompts for AI tools** like ChatGPT, Claude, or Gemini.
 
 It doesn't just generate prompts, it co-creates them with you based on your mood, topic, and journaling reflections. Think of it as a therapeutic journaling buddy that speaks your emotional language.
 
@@ -18,7 +18,7 @@ It doesn't just generate prompts, it co-creates them with you based on your mood
 ## Description
 AI-generated content often feels robotic, generic, and lacks emotional nuance, especially for people going through emotional distress, cultural marginalization, or neurodivergent thought patterns. 
 
-SentiMuse solves this by acting as an **emotionally aware prompt co-creator** that helps users (especially writers, creators, students, and mental health practitioners) craft deeply human, emotionally resonant prompts for generative AI tools like ChatGPT, Claude, or Gemini.
+SentiMuse solves this by acting as an **emotionally aware prompt co-creator** that helps users (especially writers, creators, students, and mental health practitioners) craft **deeply human, emotionally resonant prompts for generative AI tools** like ChatGPT, Claude, or Gemini.
 Whether you're a writer, student, creator, or mental health practitioner, SentiMuse helps you feel seen, heard, and inspired.
 
 ## Objectives
