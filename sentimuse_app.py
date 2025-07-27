@@ -408,7 +408,6 @@ st.markdown(
         font-size: 12px;
         padding: 16px 0 8px 0;
         z-index: 9999;
-        font-family: Source Sans Pro;
         letter-spacing: 0.01em;
     }
     </style>
