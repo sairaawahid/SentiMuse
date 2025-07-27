@@ -254,7 +254,7 @@ with st.sidebar:
     selected_emotion = EMOJI_MOODS[mood_emoji]
 
     # ---- RESET BUTTON ----
-    st.button("🔄 Reset", on_click=reset_inputs)
+    st.button("♻️ Reset", on_click=reset_inputs)
     st.markdown("---")
 
 topic_input = st.text_input(
@@ -358,7 +358,7 @@ with st.expander("Prompt Moodboard"):
                     unsafe_allow_html=True
                 )
             with col2:
-                if st.button("🗑", key=f"delete_{i}"):
+                if st.button("✖", key=f"delete_{i}"):
                     st.session_state.favorites.remove(item)
                     st.success("Prompt deleted!")
                     st.rerun()
@@ -385,7 +385,7 @@ with st.expander("Prompt Moodboard"):
             doc.build(story)
             buffer.seek(0)
             st.download_button(
-                label="📥 Export Moodboard as PDF",
+                label="📂 Export Moodboard as PDF",
                 data=buffer,
                 file_name="senti_muse_moodboard.pdf",
                 mime="application/pdf"
