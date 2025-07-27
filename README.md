@@ -91,8 +91,8 @@ $ streamlit run app.py
 
 ## Attribution
 SentiMuse was collaboratively developed by:
-- [Sairaaw](https://www.linkedin.com/in/sairaabdulwahid/) (Product Design, Prompt Engineering, Frontend Logic)
-- [Samiya-AW](https://www.linkedin.com/in/samiyaaw/) (Backend Support, Logic Integration, UI Feedback)
+- [Sairaaw](https://www.linkedin.com/in/sairaabdulwahid/) (Product Design, OpenAI API Integration, Prompt Engineering, Full Stack Web Development)
+- [Samiya-AW](https://www.linkedin.com/in/samiyaaw/) (OpenAI API Integration, Prompt Engineering, Full Stack Web Development, Logic Integration)
 
 We built this together with care, empathy, and love for emotionally intelligent technology ✨
 
