@@ -1,18 +1,22 @@
 import streamlit as st
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-import openai
 import time
+import openai
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
 from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.styles import ParagraphStyle
 from io import BytesIO
+import os
 
-# --- Set OpenAI API key from Streamlit secrets ---
-openai.api_key = st.secrets["OPENAI_API_KEY"]
-OPENAI_MODEL = "gpt-3.5-turbo"  # or "gpt-4o"
+# ---- OpenAI API Key Setup ----
+# Recommended: store OPENAI_API_KEY as a GitHub/Streamlit secret, not in code.
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
-# ---- Mood + Color Definitions ----
+# ---- Model configuration ----
+OPENAI_MODEL = "gpt-3.5-turbo"   # or "gpt-4o"
+
+# ---- Moods and their display settings ----
 EMOJI_MOODS = {
     "Select---": "",
     # Positive
@@ -77,11 +81,11 @@ MOOD_DISPLAY = {
     "Excited": {"emoji": "🤩", "color": "#FFB347"},
     "Calm": {"emoji": "😌", "color": "#A7E9AF"},
     "Optimistic": {"emoji": "😃", "color": "#A1C6EA"},
-    "Confident": {"emoji": "😎", "color": "#C2F5FF"},
+    "Confident": {"emoji": "😎",   "color": "#C2F5FF"},
     "Peaceful": {"emoji": "😇", "color": "#C3F8FF"},
     "Content": {"emoji": "😋", "color": "#FFE066"},
-    "Proud": {"emoji": "🫡", "color": "#D6FFD7"},
-    "Inspired": {"emoji": "😇", "color": "#B1E1FF"},
+    "Proud": {"emoji": "🫡",   "color": "#D6FFD7"},
+    "Inspired": {"emoji": "😇",   "color": "#B1E1FF"},
     "Hopeful": {"emoji": "🕊️", "color": "#B7E5D1"},
     "Affectionate": {"emoji": "🥰", "color": "#FFCFDF"},
     "Appreciative": {"emoji": "🫶", "color": "#FFE5B4"},
@@ -107,7 +111,7 @@ MOOD_DISPLAY = {
     "Fearful": {"emoji": "😨", "color": "#FFA07A"},
     "Overwhelmed": {"emoji": "😩", "color": "#F67280"},
     "Guilty": {"emoji": "😔", "color": "#FFD6E0"},
-    "Burnt Out": {"emoji": "🫠", "color": "#EAD7B7"},
+    "Burnt Out": {"emoji": "🫠",   "color": "#EAD7B7"},
     "Disappointed": {"emoji": "😒", "color": "#BDBDBD"},
     "Frustrated": {"emoji": "😠", "color": "#FFC3A0"},
     "Vulnerable": {"emoji": "🥺", "color": "#D6E0F0"},
@@ -137,7 +141,7 @@ def detect_sentiment(text):
     else:
         return "neutral"
 
-# ---- OpenAI Prompt Generator ----
+# ---- Prompt Generation using OpenAI ----
 def generate_prompt_openai(emotion, topic, journal=None):
     base_prompt = f"""
 You are SentiMuse: a creative prompt starter designer for emotionally intelligent AI tools.
@@ -194,7 +198,7 @@ Return ONLY a single, original, emotionally-aware writing prompt (not a question
     except Exception as e:
         return f"❌ Error: {str(e)}"
 
-# ---- Save/Load Prompts ----
+# ---- Save Manager ----
 if "favorites" not in st.session_state:
     st.session_state.favorites = []
 
@@ -209,7 +213,7 @@ def save_prompt(prompt_text, emotion=None):
 def load_saved_prompts():
     return st.session_state.favorites
 
-# ---- Streamlit State Initialization ----
+# ---- Session State Initialization ----
 if "generated_prompt" not in st.session_state:
     st.session_state.generated_prompt = ""
 if "tears_rating" not in st.session_state:
@@ -219,6 +223,14 @@ if "tears_reason" not in st.session_state:
 if "show_save_success" not in st.session_state:
     st.session_state.show_save_success = False
 
+# --- Resettable input session state ---
+if "selected_mood" not in st.session_state:
+    st.session_state.selected_mood = "Select---"
+if "topic_input" not in st.session_state:
+    st.session_state.topic_input = ""
+if "journal_entry" not in st.session_state:
+    st.session_state.journal_entry = ""
+
 # ---- UI Layout ----
 st.set_page_config(page_title="SentiMuse", layout="wide")
 st.title("🎭 SentiMuse: Prompt Co-Creation with Soul")
@@ -226,12 +238,35 @@ st.title("🎭 SentiMuse: Prompt Co-Creation with Soul")
 with st.sidebar:
     st.header("🧠 Select Your Mood")
     st.markdown("📝 *Set your emotional tone to guide your creative prompt journey.*")
-    mood_emoji = st.selectbox("How are you feeling?", list(EMOJI_MOODS.keys()))
+    mood_emoji = st.selectbox(
+        "How are you feeling?",
+        list(EMOJI_MOODS.keys()),
+        index=list(EMOJI_MOODS.keys()).index(st.session_state.selected_mood),
+        key="selected_mood"
+    )
     selected_emotion = EMOJI_MOODS[mood_emoji]
     st.markdown("---")
 
-topic_input = st.text_input("What do you want to write/talk about?", "")
-journal_entry = st.text_area("Optional: Write how you feel in your own words", "")
+topic_input = st.text_input(
+    "What do you want to write/talk about?",
+    value=st.session_state.topic_input,
+    key="topic_input"
+)
+journal_entry = st.text_area(
+    "Optional: Write how you feel in your own words",
+    value=st.session_state.journal_entry,
+    key="journal_entry"
+)
+
+# ---- RESET BUTTON ----
+if st.button("🔄 Reset"):
+    st.session_state.selected_mood = "Select---"
+    st.session_state.topic_input = ""
+    st.session_state.journal_entry = ""
+    st.session_state.generated_prompt = ""
+    st.session_state.tears_rating = None
+    st.session_state.tears_reason = ""
+    st.experimental_rerun()
 
 if journal_entry:
     detected = detect_sentiment(journal_entry)
