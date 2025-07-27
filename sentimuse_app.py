@@ -236,8 +236,8 @@ st.set_page_config(page_title="SentiMuse", layout="wide")
 st.title("🎭 SentiMuse: Prompt Co-Creation with Soul")
 
 with st.sidebar:
-    st.header("🧠 Select Your Mood")
-    st.markdown("📝 *Set your emotional tone to guide your creative prompt journey.*")
+    st.header("Select Your Mood")
+    st.markdown("*Set your emotional tone to guide your creative prompt journey.*")
     mood_emoji = st.selectbox(
         "How are you feeling?",
         list(EMOJI_MOODS.keys()),
@@ -264,7 +264,7 @@ topic_input = st.text_input(
     key="topic_input"
 )
 journal_entry = st.text_area(
-    "Optional: Write how you feel in your own words",
+    "Write how you feel in your own words.",
     value=st.session_state.journal_entry,
     key="journal_entry"
 )
