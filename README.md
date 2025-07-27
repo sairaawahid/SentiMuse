@@ -100,6 +100,7 @@ See the `LICENSE` file for more details.
 If you liked this project or want to collaborate on emotion-first AI tools, reach out via LinkedIn or GitHub:
 
 **Sairaaw:** [LinkedIn](https://www.linkedin.com/in/sairaabdulwahid/) or [GitHub](https://github.com/sairaawahid)
+
 **Samiya-AW:** [LinkedIn](https://www.linkedin.com/in/samiyaaw/) or [GitHub](https://github.com/Samiya-AW)
 
 *Made with ❤️ at the CS Girlies Hackathon 2025*
