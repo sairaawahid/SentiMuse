@@ -22,7 +22,6 @@ Whether you're a writer, student, creator, or mental health practitioner, SentiM
 ---
 
 ## Features
-
 - Emotion-Driven Prompting: Select your mood to guide the prompt tone.
 - Topic + Journal Input: Tailor prompts based on your input and reflection.
 - VADER Sentiment Analysis: Get real-time sentiment from your journal notes.
@@ -33,7 +32,6 @@ Whether you're a writer, student, creator, or mental health practitioner, SentiM
 ---
 
 ## Usage
-
 1. Select Your Mood from the sidebar (e.g., Anxious, Joyful).
 2. Enter a Topic you want to write or think about.
 3. Add a journal note — how you're currently feeling.
@@ -43,7 +41,6 @@ Whether you're a writer, student, creator, or mental health practitioner, SentiM
 ---
 
 ## Tech Stack
-
 - Streamlit for UI
 - OpenAI GPT-3.5-turbo or GPT-4o for language generation
 - VADER Sentiment Analyzer for emotion detection
@@ -78,7 +75,6 @@ $ streamlit run app.py
 ---
 
 ## Outcome
-
 - Successfully deployed as an interactive, responsive Streamlit web app.
 - Used in CS Girlies Hackathon under the theme "AI vs H.I." to demonstrate human-centered AI.
 - Accessible to creators, writers, and wellness professionals seeking emotionally resonant tools.
@@ -86,7 +82,6 @@ $ streamlit run app.py
 --- 
 
 ## Attribution
-
 SentiMuse was collaboratively developed by:
 
 - [Sairaaw](https://www.linkedin.com/in/sairaabdulwahid/) (Product Design, Prompt Engineering, Frontend Logic)
@@ -101,8 +96,6 @@ If you use or adapt this app, please credit the author by linking to the origina
 ## License
 This project is licensed under the MIT License.
 See the `LICENSE` file for more details.
-
----
 
 If you liked this project or want to collaborate on emotion-first AI tools, reach out via LinkedIn or GitHub:
 Sairaaw: [LinkedIn](https://www.linkedin.com/in/sairaabdulwahid/) or [GitHub](https://github.com/sairaawahid)
