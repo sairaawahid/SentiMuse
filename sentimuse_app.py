@@ -182,7 +182,7 @@ Input:
 - Journal: {journal if journal else "None"}
 
 Output:
-Return ONLY a single, original, emotionally-aware writing prompt (not a question, not advice, not poetic).
+Return a single, original, emotionally-aware writing prompt in clear, everyday language (not a question). Make it something a user could copy and paste directly into ChatGPT, Claude, Gemini, etc., for creative writing or self-reflection. Avoid giving advice, asking questions, or using poetic/metaphorical language. Use simple, direct, and natural words.
 """
     try:
         response = openai.chat.completions.create(
