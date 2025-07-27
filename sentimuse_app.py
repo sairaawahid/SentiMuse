@@ -222,14 +222,21 @@ if "tears_reason" not in st.session_state:
     st.session_state.tears_reason = ""
 if "show_save_success" not in st.session_state:
     st.session_state.show_save_success = False
-
-# --- Resettable input session state ---
 if "selected_mood" not in st.session_state:
     st.session_state.selected_mood = "Select---"
 if "topic_input" not in st.session_state:
     st.session_state.topic_input = ""
 if "journal_entry" not in st.session_state:
     st.session_state.journal_entry = ""
+
+# --- Helper function for resetting inputs ---
+def reset_inputs():
+    st.session_state.selected_mood = "Select---"
+    st.session_state.topic_input = ""
+    st.session_state.journal_entry = ""
+    st.session_state.generated_prompt = ""
+    st.session_state.tears_rating = None
+    st.session_state.tears_reason = ""
 
 # ---- UI Layout ----
 st.set_page_config(page_title="SentiMuse", layout="wide")
@@ -247,15 +254,7 @@ with st.sidebar:
     selected_emotion = EMOJI_MOODS[mood_emoji]
 
     # ---- RESET BUTTON ----
-    if st.button("🔄 Reset"):
-        st.session_state.selected_mood = "Select---"
-        st.session_state.topic_input = ""
-        st.session_state.journal_entry = ""
-        st.session_state.generated_prompt = ""
-        st.session_state.tears_rating = None
-        st.session_state.tears_reason = ""
-        st.experimental_rerun()
-        
+    st.button("🔄 Reset", on_click=reset_inputs)
     st.markdown("---")
 
 topic_input = st.text_input(
