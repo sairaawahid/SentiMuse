@@ -154,7 +154,7 @@ Rules:
 - The prompt should be something the user can copy and paste into ChatGPT, Claude, or Gemini to get emotionally resonant content.
 - Do NOT ask a question. Do NOT give advice. Do NOT use metaphors or poetic language.
 - If journal notes are present, use the user’s words or themes naturally.
-- Make sure the prompt is actionable, relatable, and safe for anyone.
+- Make sure the prompt relatable and safe for anyone.
 - Keep the prompt under 20 words if possible.
 - Use everyday words that anyone could understand.
 - No need for details unless the journal includes them.
