@@ -97,6 +97,8 @@ If you use or adapt this app, please credit the author by linking to the origina
 This project is licensed under the MIT License.
 See the `LICENSE` file for more details.
 
+---
+
 If you liked this project or want to collaborate on emotion-first AI tools, reach out via LinkedIn or GitHub:
 
 **Sairaaw:** [LinkedIn](https://www.linkedin.com/in/sairaabdulwahid/) or [GitHub](https://github.com/sairaawahid)
