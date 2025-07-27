@@ -245,6 +245,17 @@ with st.sidebar:
         key="selected_mood"
     )
     selected_emotion = EMOJI_MOODS[mood_emoji]
+
+    # ---- RESET BUTTON ----
+    if st.button("🔄 Reset"):
+        st.session_state.selected_mood = "Select---"
+        st.session_state.topic_input = ""
+        st.session_state.journal_entry = ""
+        st.session_state.generated_prompt = ""
+        st.session_state.tears_rating = None
+        st.session_state.tears_reason = ""
+        st.experimental_rerun()
+        
     st.markdown("---")
 
 topic_input = st.text_input(
@@ -257,16 +268,6 @@ journal_entry = st.text_area(
     value=st.session_state.journal_entry,
     key="journal_entry"
 )
-
-# ---- RESET BUTTON ----
-if st.button("🔄 Reset"):
-    st.session_state.selected_mood = "Select---"
-    st.session_state.topic_input = ""
-    st.session_state.journal_entry = ""
-    st.session_state.generated_prompt = ""
-    st.session_state.tears_rating = None
-    st.session_state.tears_reason = ""
-    st.experimental_rerun()
 
 if journal_entry:
     detected = detect_sentiment(journal_entry)
@@ -313,7 +314,7 @@ if st.session_state.generated_prompt:
         st.session_state.show_save_success = False
         st.rerun()
 
-    st.markdown("### 😭 Tears Meter — How much did this move you?")
+    st.markdown("### Tears Meter — How much did this move you?")
     tears_options = {
         "😐 Meh, not really": 1,
         "🥲 A little emotional": 2,
@@ -322,7 +323,7 @@ if st.session_state.generated_prompt:
     rating_label = st.radio("Emotional Impact:", list(tears_options.keys()))
     st.session_state.tears_rating = tears_options[rating_label]
     st.session_state.tears_reason = st.text_area("Optional: Why did this move you?", "")
-    if st.button("📝 Submit Rating"):
+    if st.button("Submit Rating"):
         st.success("Thanks for your emotional feedback!")
         with st.expander("🔍 View Your Tears Feedback"):
             st.markdown(f"**Rating Level:** {st.session_state.tears_rating}")
@@ -331,7 +332,7 @@ if st.session_state.generated_prompt:
             else:
                 st.markdown("_No reflection provided._")
 
-with st.expander("🖼️ Prompt Moodboard"):
+with st.expander("Prompt Moodboard"):
     favorites = load_saved_prompts()
     if favorites:
         all_emotions = sorted(set([f["emotion"] for f in favorites]))
