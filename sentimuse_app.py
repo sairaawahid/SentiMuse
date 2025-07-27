@@ -392,3 +392,32 @@ with st.expander("Prompt Moodboard"):
             )
     else:
         st.markdown("_No prompts saved yet._")
+
+# ---- Attribution Footer ----
+st.markdown(
+    """
+    <style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        background: transparent;
+        color: #888;
+        text-align: center;
+        font-size: 0.98rem;
+        padding: 16px 0 8px 0;
+        z-index: 9999;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        letter-spacing: 0.01em;
+    }
+    </style>
+    <div class="footer">
+        © 2025 <b>Sairaaw</b> &amp; <b>Samiya-AW</b>. All rights reserved.<br>
+        If you use or adapt this project, please give credit by linking to the 
+            <a href="https://github.com/sairaawahid/SentiMuse" target="_blank">
+            GitHub repository</a>.
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
