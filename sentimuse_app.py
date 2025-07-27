@@ -140,26 +140,29 @@ def detect_sentiment(text):
 # ---- OpenAI Prompt Generator ----
 def generate_prompt_openai(emotion, topic, journal=None):
     base_prompt = f"""
-You are SentiMuse: a creative prompt designer for emotionally intelligent AI tools.
+You are SentiMuse: a creative prompt starter designer for emotionally intelligent AI tools.
 
-Your job is to co-create a human-centered writing prompt that brings out authentic feeling, reflection, and insight—rooted in the user's emotion and topic.
+Your job is to co-create a human-centered, emotionally-aware writing prompt in simple, natural language (not a question, not poetic/metaphorical, not advice-giving).
 
 Rules:
 - Reflect the emotion (“{emotion}”) clearly in the tone.
-- The prompt should feel personal, thoughtful, or therapeutic.
-- Avoid generic or robotic phrasing.
-- If journal notes are present, add nuance.
-- Let the specified emotion (“{emotion}”) color the prompt’s mood, voice, or perspective.
-- Use language that feels genuinely human, relatable, and gentle.
-- Invite the user to connect, heal, or celebrate, depending on the emotion.
-- Sprinkle in surprise, curiosity, or beauty—avoid clichés and overused phrases.
-- If the user's journal notes are present, weave in *their* words or themes for deeper resonance.
-- Encourage the user to see their experience from a new angle or ask ‘what if’.
-- Make the prompt accessible and clear for any background.
-- Prioritize emotional safety—avoid any harsh or triggering suggestions.
-- Make sure your prompt is actionable—something the user could respond to with depth.
-- Keep language clear, warm, and inclusive. Avoid assumptions about the user’s life or beliefs.
-- If in doubt, err on the side of comfort and validation.
+- Use simple, clear, direct language that feels natural in daily life.
+- The prompt should be something the user can copy and paste into ChatGPT, Claude, or Gemini to get emotionally resonant content.
+- Do NOT ask a question. Do NOT give advice. Do NOT use metaphors or poetic language.
+- If journal notes are present, use the user’s words or themes naturally.
+- Make sure the prompt is actionable, relatable, and safe for anyone.
+
+Examples:
+
+Good:
+- "Write a short story about a time you overcame fear and felt proud."
+- "Describe a place that feels like home when you’re feeling anxious."
+- "Imagine your future self sending you a message of encouragement after a hard day."
+
+Bad:
+- "How do you feel when you’re anxious?"
+- "Fear is a gentle visitor in your life."
+- "Describe your feelings in detail."
 
 Input:
 - Emotion: {emotion}
@@ -167,7 +170,7 @@ Input:
 - Journal: {journal if journal else "None"}
 
 Output:
-Return a single, original, emotionally-rich writing prompt (1–2 sentences):
+Return ONLY a single, original, emotionally-aware writing prompt (not a question, not advice, not poetic).
 """
     try:
         response = openai.chat.completions.create(
@@ -176,8 +179,8 @@ Return a single, original, emotionally-rich writing prompt (1–2 sentences):
                 {"role": "system", "content": "You are a creative and emotionally intelligent prompt generator."},
                 {"role": "user", "content": base_prompt}
             ],
-            temperature=0.85,
-            max_tokens=120
+            temperature=0.7,   # Lowered for clarity/simplicity
+            max_tokens=100
         )
         return response.choices[0].message.content.strip()
     except Exception as e:
