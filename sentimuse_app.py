@@ -243,7 +243,7 @@ st.set_page_config(page_title="SentiMuse", layout="wide")
 st.title("🎭 SentiMuse: Prompt Co-Creation with Soul")
 
 with st.sidebar:
-    st.header("Select Your Mood")
+    st.header("👤 Select Your Mood")
     st.markdown("*Set your emotional tone to guide your creative prompt journey.*")
     mood_emoji = st.selectbox(
         "How are you feeling?",
