@@ -83,11 +83,11 @@ $ streamlit run app.py
 
 ## Attribution
 SentiMuse was collaboratively developed by:
-
 - [Sairaaw](https://www.linkedin.com/in/sairaabdulwahid/) (Product Design, Prompt Engineering, Frontend Logic)
 - [Samiya-AW](https://www.linkedin.com/in/samiyaaw/) (Backend Support, Logic Integration, UI Feedback)
 
 We built this together with care, empathy, and love for emotionally intelligent technology ✨
+
 If you use or adapt this app, please credit the author by linking to the original GitHub repository:
 🔗 https://github.com/sairaawahid/SentiMuse
 
