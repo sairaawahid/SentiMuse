@@ -34,12 +34,12 @@ Whether you're a writer, student, creator, or mental health practitioner, SentiM
 ---
 
 ## Features
-- Emotion-Driven Prompting: Select your mood to guide the prompt tone.
-- Topic + Journal Input: Tailor prompts based on your input and reflection.
-- VADER Sentiment Analysis: Get real-time sentiment from your journal notes.
-- Tears Meter: Reflect on how emotionally resonant the prompt was.
-- Prompt Moodboard: Save, filter, and export your favorite prompts as a PDF.
-- Reset Button: Clear inputs while keeping your saved prompt history.
+- **Emotion-Driven Prompting:** Select your mood to guide the prompt tone.
+- **Topic + Journal Input:** Tailor prompts based on your input and reflection.
+- **VADER Sentiment Analysis:** Get real-time sentiment from your journal notes.
+- **Tears Meter:** Reflect on how emotionally resonant the prompt was.
+- **Prompt Moodboard**: Save, filter, and export your favorite prompts as a PDF.
+- **Reset Button:** Clear inputs while keeping your saved prompt history.
 
 ---
 
