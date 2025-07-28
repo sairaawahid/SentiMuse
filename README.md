@@ -3,7 +3,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 [![Streamlit App](https://img.shields.io/badge/Live%20App-Streamlit-ff4b4b?logo=streamlit)](https://sairaaw-sentimuse.streamlit.app)
 
-![Logo and app UI screenshot]<img width="1772" height="497" alt="SentiMuse" src="https://github.com/user-attachments/assets/b3d11546-d5bd-4581-bcc2-450d5f6098e6" />
+<img width="1772" height="497" alt="SentiMuse" src="https://github.com/user-attachments/assets/b3d11546-d5bd-4581-bcc2-450d5f6098e6" />
 
 SentiMuse is a **human-first, emotionally intelligent** writing companion that helps you **generate emotionally aware prompts for AI tools** like ChatGPT, Claude, or Gemini.
 
