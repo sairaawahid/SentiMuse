@@ -1,4 +1,4 @@
-# SentiMuse: Prompt Co-Creation with Soul
+# SentiMuse: The Prompt Whisperer for Emotional Resonance
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 [![Streamlit App](https://img.shields.io/badge/Live%20App-Streamlit-ff4b4b?logo=streamlit)](https://sairaaw-sentimuse.streamlit.app)
