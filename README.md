@@ -100,7 +100,7 @@ SentiMuse was collaboratively developed by:
 
 We built this together with care, empathy, and love for emotionally intelligent technology ✨
 
-If you use or adapt this app, please credit the author by linking to the original GitHub repository:
+If you use or adapt this app, please credit the developer(s) by linking to the original GitHub repository:
 🔗 https://github.com/sairaawahid/SentiMuse
 
 ---
