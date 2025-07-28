@@ -88,7 +88,7 @@ $ streamlit run app.py
 
 ## Outcome
 - Successfully deployed as an interactive, responsive Streamlit web app.
-- Used in CS Girlies Hackathon under the theme "AI vs H.I." to demonstrate human-centered AI.
+- Used in CS Girlies Hackathon under the theme 'A.I vs H.I' to demonstrate human-centered AI.
 - Accessible to creators, writers, and wellness professionals seeking emotionally resonant tools.
 
 --- 
